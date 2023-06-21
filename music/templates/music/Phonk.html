@@ -1,0 +1,13 @@
+{% extends 'music/base.html' %}
+
+{% block content %}
+
+{% for phonk in songs %}
+    <h1>{{ phonk.song_name }}</h1>
+    <p>Author: {{ phonk.author_name }}</p>
+    <audio controls>
+        <source src="{{  phonk.song.url }}" type="audio/mp3">
+        Your browser does not support the audio element.
+     </audio>
+{% endfor %}
+{% endblock %}
