@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from .forms import *
 from .models import *
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+
 
 # Create your views here.
 
@@ -12,3 +15,12 @@ def category_phonk(request):
 
 def learn(request):
     return render(request,"music/learning.html")
+
+def get_name(request):
+    if request.method == 'POST':
+        form = NameForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect('phonk/')
+    else:
+        form = NameForm()
+    return render(request,'music/name.html', {'form': form})

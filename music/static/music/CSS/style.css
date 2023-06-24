@@ -1,0 +1,28 @@
+aside{
+    float: left;
+    background: #181818;
+    width: 15%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5 px solid #4d4d4d;
+}
+
+aside img{
+    width: 80px;
+    height: 80px;
+    float:left
+}
+
+aside ul{
+    float: left;
+}
+
+aside .logo{
+    font-size: 40px;
+    font-weight: bolt;
+}
+
+aside h3{
+    text-align:center;
+}
