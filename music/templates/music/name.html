@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<form action="/your_name" method="post">
+<form action="{% url 'name' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
+    {{ form.as_p}}
+    <input type="submit" value="Отправить">
 </form>
 
 
