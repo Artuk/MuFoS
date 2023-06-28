@@ -6,5 +6,6 @@ urlpatterns = [
     path('',base,name='home'),
     path('phonk/', category_phonk, name='phonk'),
     path('learn/',learn),
-    path('your_name', get_name, name='name')
+    path('music_add', AddMusic, name='Music'),
+    path('category_add', AddCategory, name='Category')
 ]

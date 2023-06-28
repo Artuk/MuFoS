@@ -17,7 +17,7 @@ def category_phonk(request):
 def learn(request):
     return render(request,"music/learning.html")
 
-def get_name(request):
+def AddMusic(request):
     if request.method == 'POST':
         form = NameForm(request.POST, request.FILES)  # Добавлен аргумент request.FILES
         if form.is_valid():
@@ -30,4 +30,17 @@ def get_name(request):
 
     else:
         form = NameForm()
-    return render(request, 'music/name.html', {'form': form})
+    return render(request, 'music/Addmusic.html', {'form': form})
+
+def AddCategory(request):
+    if request.method == "POST":
+        form = NameCategory(request.POST)
+        if form.is_valid():
+            try:
+                Categories.objects.create(**form.cleaned_data)
+                return redirect(reverse("home"))
+            except:
+                form.add_error(None, "Ошибка добавления категории" )
+    else:
+        form = NameCategory()
+    return render(request,'music/AddCategory.html', {'form': form})

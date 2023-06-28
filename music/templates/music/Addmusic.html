@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form action="{% url 'name' %}" method="post" enctype="multipart/form-data">
+<form action="{% url 'Music' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p}}
     <input type="submit" value="Отправить">
