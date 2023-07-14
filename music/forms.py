@@ -1,12 +1,29 @@
 from django import forms
 from .models import *
+from django.core.exceptions import ValidationError
+
+class NameForm(forms.ModelForm):
+    class Meta:
+        model = Music
+        fields = "__all__"
+
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.fields['cat'].empty_label = "Категория не выбрана"
 
 
-class NameForm(forms.Form):
-    song_name = forms.CharField(max_length=100)
-    author_name = forms.CharField(max_length=100)
-    song = forms.FileField()
-    cat = forms.ModelChoiceField(queryset=Categories.objects.all(),empty_label="Категория не выбрана")
+    def clean_song_name(self):
+        song_name = self.cleaned_data["song_name"]
+        if len(song_name) > 25:
+            raise ValidationError("Длина песни больше 25 символов")
 
-class NameCategory(forms.Form):
-    category_name = forms.CharField(max_length=100)
+        return song_name
+
+
+
+
+class NameCategory(forms.ModelForm):
+    class Meta:
+        model = Categories
+        fields = '__all__'
+

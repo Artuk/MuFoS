@@ -1,28 +1,75 @@
-aside{
+aside {
     float: left;
     background: #181818;
-    width: 15%;
-    padding: 2.5%;
+    width: 9.6%;
+    padding: 1%;
     height: 100vh;
     color: #fff;
-    border-right: 5 px solid #4d4d4d;
+    border-right: 3px solid #ffcc33;
+    border-top: 3px solid #ffcc33;
 }
 
-aside img{
+aside img {
     width: 80px;
     height: 80px;
-    float:left
-}
-
-aside ul{
     float: left;
 }
 
-aside .logo{
-    font-size: 40px;
-    font-weight: bolt;
+aside ul {
+    float: left;
 }
 
-aside h3{
-    text-align:center;
+aside .logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+aside h3 {
+    text-align: center;
+}
+
+
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.list-pages {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.list-pages ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.list-pages li {
+    margin: 0 5px;
+}
+
+.list-pages a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.list-pages a:hover {
+    background-color: #e0e0e0;
+}
+
+.list-pages .page-num.active a {
+    background-color: #ccc;
+    cursor: default;
 }
