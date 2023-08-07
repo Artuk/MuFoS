@@ -1,33 +1,44 @@
 aside {
     float: left;
-    background: #181818;
-    width: 9.6%;
+    background: #ff8c00;
+    width: 15%;
     padding: 1%;
     height: 100vh;
     color: #fff;
-    border-right: 3px solid #ffcc33;
-    border-top: 3px solid #ffcc33;
+
 }
 
 aside img {
     width: 80px;
     height: 80px;
-    float: left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 aside ul {
     float: left;
+
 }
 
+
 aside .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 40px;
     font-weight: bold;
     color: white;
     text-decoration: none;
+    margin-bottom: 40px;
+
 }
+
 
 aside h3 {
     text-align: center;
+    margin-top: 35px;
+    margin-bottom: 15px;
 }
 
 
@@ -72,4 +83,45 @@ aside h3 {
 .list-pages .page-num.active a {
     background-color: #ccc;
     cursor: default;
+}
+
+.form-input {
+    width: 300px;
+    font-size: 16px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.form-button {
+    min-width: 200px;
+    font-size: 16px;
+}
+
+aside .auth-links {
+    display: inline-block;
+    margin-top: 100px;
+
+}
+
+aside .auth-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 7px;
+    margin-left: 7px;
+    font-size: 19px;
+
+}
+
+aside .auth-links a:hover {
+    text-decoration: underline;
 }
